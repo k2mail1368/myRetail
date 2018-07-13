@@ -1,0 +1,39 @@
+{% extends "_base.html" %}
+
+{% block content %}
+
+<div class="text-center">
+  <h1>Welcome!</h1>
+</div>
+
+<br>
+<br>
+<hr>
+
+<br>
+<hr>
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Currency</th>
+      <th scope="col">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for item in items %}
+    <tr>
+      <th scope="row">{{item._id}}</th>
+      <td>{{item.product_id}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.current_price.currency_code}}</td>
+      <td>{{item.current_price.value}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}
